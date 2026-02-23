@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Sthefane Costa | Portfólio</title>
+</head>
+
+<body>
+  <div class="particulas"></div>
+
+  <nav class="navegacao">
+    <ul class="menu">
+      <li>
+        <a href="#inicio" class="menu-link">Início</a>
+      </li>
+      <li>
+        <a href="#sobre" class="menu-link">Sobre</a>
+      </li>
+      <li>
+        <a href="#projetos" class="menu-link">Projetos</a>
+      </li>
+      <li>
+        <a href="#contatos" class="menu-link">Contato</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="inicio" class="cabecalho">
+    <img src="img/sthefane.jpg" alt="Foto de Sthefane Costa" class="foto-perfil">
+    <h1>Sthefane Costa</h1>
+    <p class="cabecalho-subtitulo">Analista de Dados</p>
+  </main>
+
+  <section id="sobre" class="sobre">
+    <h2 class="sub-titulo">Sobre Mim</h2>
+    <div class="descricao">
+      <p class="descricao-paragrafo">
+        Minha jornada na tecnologia começou com a curiosidade de entender como o mundo digital funciona, o que me levou
+        ao curso de Análise e Desenvolvimento de Sistemas.
+        Hoje, meu foco está totalmente voltado para a análise de dados, onde busco unir lógica de programação com uma
+        visão analítica apurada.
+        Sou apaixonada por resolver problemas e acredito que o aprendizado contínuo é a chave para criar soluções que
+        realmente impactem o dia a dia das pessoas e das empresas.
+      </p>
+    </div>
+  </section>
+
+  <section id="projetos" class="sobre">
+    <h2 class="projetos-titulo">Meus Projetos</h2>
+    <div class="card-item">
+      <h3>Em desenvolvimento...</h3>
+      <p class="paragrafo-projetos">Atualmente estou trabalhando em análises de dados utilizando Python e SQL. Em breve,
+        os dashboards e relatórios
+        estarão disponíveis aqui!</p>
+    </div>
+  </section>
+
+  <section id="contatos" class="sobre">
+    <h2 class="contatos-titulo">Entre em Contato</h2>
+
+    <form class="formulario-contato" id="formulario" onsubmit="enviarEmail(event)">
+      <div class="grupo-form">
+        <input placeholder="Nome" class="campo-form" id="nome" required>
+      </div>
+
+      <div class="grupo-form">
+        <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem" required></textarea>
+      </div>
+      <button type="submit" class="botao-form">Enviar Mensagem</button>
+    </form>
+  </section>
+  <script>
+    function enviarEmail(event) {
+      // Impede a página de recarregar ao clicar no botão
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const emailDestino = 'sthefanecosta.contato@gmail.com';
+
+      const assunto = encodeURIComponent(`Contato de ${nome}`);
+      const corpo = encodeURIComponent(`Olá! Me chamo ${nome}.\n\n${mensagem}`);
+
+      const linkEmail = `mailto:${emailDestino}?subject=${assunto}&body=${corpo}`;
+
+      window.location.href = linkEmail;
+    }
+
+  </script>
+</body>
+
+</html>
